@@ -252,6 +252,7 @@ public abstract class ByteBuddyLocalClassesEnhancerTask extends DefaultTask {
             task.getByteBuddyClasspath().from(byteBuddyConfiguration);
             task.getAndroidBootClasspath().from(androidExtension.getBootClasspath());
             task.getJavaTargetCompatibilityVersion().set(androidExtension.getCompileOptions().getTargetCompatibility());
+            task.getEntryPoint().convention(new EntryPoint.Unvalidated(EntryPoint.Default.REBASE));
         }
     }
 
